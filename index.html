@@ -573,19 +573,19 @@ function buildChart1(period) {
       datasets: [
         { label: 'Net Cash Flow', data: d.netCF, backgroundColor: barColors,
           borderColor: barColors, borderWidth: 1, yAxisID: 'y', maxBarThickness:50, barPercentage:0.7,
-          order: 1, 
+          order: 3, 
           datalabels: { anchor:'end', align:'top', formatter:v=>fmt(v)+' tỷ', font:{size:8,weight:'bold'},
             color: ctx => ctx.dataset.data[ctx.dataIndex]>=0?'#16A34A':'#DC2626' } },
         { label: 'Vnindex', data: d.vni, type:'line', yAxisID:'y1',
-          order: 2,
+          order: 1,
           borderColor:'#475569', backgroundColor:'transparent',
           borderWidth:2, pointRadius:3, tension:0.3,
           datalabels:{display:false} },
         { label: 'Market Trading Value (k tỷ)', data: d.vol, type:'line', yAxisID:'y2',
-          order: 2,
+          order: 1,
           borderColor:'#A855F7', backgroundColor:'rgba(168,85,247,0.12)',
           borderWidth:1.5, borderDash:[4,3], pointRadius:3, pointBackgroundColor:'#A855F7',
-          tension:0.4, fill:true, datalabels:{display:false} }
+          tension:0.4, fill:false, datalabels:{display:false} }
       ]
     },
     options: {
